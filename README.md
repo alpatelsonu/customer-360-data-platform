@@ -15,7 +15,7 @@ Using **Snowflake, dbt, and Airflow**, this pipeline:
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architecture (docs/architecture.png)
 
 ```
 RAW → BRONZE → SILVER → SNAPSHOT → GOLD
