@@ -6,14 +6,16 @@ logs/
 data_simulation/raw_load_data.sql
 dataset/
 dashboards/
-*/analyses/
-*/seeds/
-*/package-lock.yml
+
 
 # dbt
 target/
 dbt_packages/
 logs/
+customer_360/analyses/
+customer_360/seeds/
+customer_360/package-lock.yml
+
 
 # Python
 __pycache__/
@@ -25,6 +27,8 @@ env/
 
 # Airflow
 airflow/logs/
+airflow/dags/customer_360_dag_bash.py
+
 
 # OS
 .DS_Store
