@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CUSTOMER_360
+    schema: RAW
+    tables:
+      - name: raw_user_events
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: { count: 1, period: hour }
+          error_after: { count: 2, period: hour }
+      - name: raw_orders
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: { count: 26, period: hour }
+          error_after: { count: 30, period: hour }
+      - name: raw_identity_map
+        loaded_at_field: ingestion_timestamp
+        freshness:
+          warn_after: { count: 1, period: day }
+          error_after: { count: 2, period: day }
+      - name: customer_base
+
+# Configured source freshness based on expected ingestion frequency with buffer thresholds to detect upstream delays
+# “How stale is the latest data compared to now?”

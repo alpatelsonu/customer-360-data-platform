@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: gold_customer_metrics
+  - name: gold_customer_advance_metrics
+  - name: gold_repeat_metrics_by_segment
+  - name: gold_daily_active_users
+  - name: gold_cohort_retention
+  - name: gold_cohort_decay
+  - name: gold_cohort_retention_pivot

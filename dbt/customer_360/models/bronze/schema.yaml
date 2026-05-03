@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: bronze_user_events
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "event_timestamp <= current_timestamp"
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                [
+                  "purchase",
+                  "view",
+                  "add_to_cart",
+                  "click",
+                  "VIEW",
+                  "View",
+                  "Purchase",
+                  "PURCHASE",
+                  "ADD_TO_CART",
+                  "Add_To_Cart",
+                ]
+      - name: event_timestamp
+        tests:
+          - not_null
+  - name: bronze_orders
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "order_amount >= 0"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ["F", "O", "P", "f", "o", "p"]
+      - name: order_amount
+        tests:
+          - not_null
+  - name: bronze_identity_map
+    columns:
+      - name: old_user_id
+        tests:
+          - not_null
+      - name: new_user_id
+        tests:
+          - not_null
+      - name: effective_from
+        tests:
+          - not_null
+
+# column level test
+# - dbt_utils.accepted_range:
+#         min_value: 0
+#         inclusive: true
+
+#mdoel level test
+# - dbt_utils.expression_is_true:
+#           expression: "event_timestamp <= current_timestamp"

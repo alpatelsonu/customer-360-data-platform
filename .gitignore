@@ -1,0 +1,35 @@
+
+*/target/
+*/dbt_packages/
+logs/
+*/logs/
+data_simulation/raw_load_data.sql
+dataset/
+dashboards/
+*/analyses/
+*/seeds/
+*/package-lock.yml
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+env/
+
+# Airflow
+airflow/logs/
+
+# OS
+.DS_Store
+
+# Secrets
+.env
+profiles.yml
+

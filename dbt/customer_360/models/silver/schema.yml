@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: silver_identity_current
+  - name: silver_user_events_pit
+  - name: silver_user_events_latest
