@@ -1,6 +1,4 @@
 
-*/target/
-*/dbt_packages/
 logs/
 */logs/
 data_simulation/raw_load_data.sql
@@ -9,12 +7,12 @@ dashboards/
 
 
 # dbt
-target/
-dbt_packages/
-logs/
-customer_360/analyses/
-customer_360/seeds/
-customer_360/package-lock.yml
+dbt/customer_360/target/
+dbt/customer_360/dbt_packages/
+dbt/logs/
+dbt/customer_360/analyses/
+dbt/customer_360/seeds/
+dbt/customer_360/package-lock.yml
 
 
 # Python
