@@ -160,9 +160,9 @@ Retention = % users returning in future months
 DAG execution order:
 
 ```
-dbt run (upstream)
+dbt run -s tag:upstream
 → dbt snapshot
-→ dbt run (downstream)
+→ dbt run -s tag:downstream
 → dbt test
 ```
 
@@ -211,16 +211,6 @@ dbt run (upstream)
 - PIT joins may produce NULLs if identity is missing
 - No incremental models (yet)
 - No streaming ingestion (batch only)
-
----
-
-## 🚀 How to Run
-
-```bash
-dbt run
-dbt snapshot
-dbt test
-```
 
 ---
 
