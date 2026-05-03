@@ -13,7 +13,7 @@ default_args = {
     "retries": 2,
     "retry_delay": timedelta(minutes=5),
     # Alerts
-    "email": ["sonupatel10906997@example.com"],
+    "email": ["alpatelsonu@gmail.com"],
     "email_on_failure": True,
     "email_on_retry": False,
 }

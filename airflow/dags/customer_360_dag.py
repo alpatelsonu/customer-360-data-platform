@@ -12,14 +12,11 @@ profile_config = ProfileConfig(
         profile_args={
             "database": "CUSTOMER_360",
             "schema": "RAW"
-            # "database": "dbt_db",
-            # "schema": "dbt_schema"
         }
     )
     
-)# The root inside the container is /usr/local/airflow
-# Assuming your dbt folder is inside the 'dags' folder of your Astro project
-# DBT_DEMO_PATH = "/usr/local/airflow/dags/dbt/demo_dbt_snowflake"
+)
+
 DBT_DEMO_PATH = "/usr/local/airflow/dags/dbt/customer_360"
 DBT_EXEC_PATH = "/usr/local/airflow/dbt_env/bin/dbt"
 
